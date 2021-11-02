@@ -6,7 +6,7 @@ Web app with user generated templates with dynamic variables
 
 You can use PHP builtin development server, from the root of this project.
 
-````shell
+```shell
 php -S localhost:8000 -t public
 ```
 
