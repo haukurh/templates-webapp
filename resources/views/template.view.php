@@ -26,7 +26,7 @@
 
 <script>
     const body = document.getElementById('input-template-body');
-    body.placeholder = "Hæ {{Nafn}},\r\n\r\nHvernig hefur þú það í dag?\r\n\r\n{{Þjónustufulltrúi}} sagði mér X.\r\n\r\nÞú mátt mæta klukkan {{Tímasetning}}\r\n\r\nKveðja\r\n{{Svar}}";
+    body.placeholder = "Hello {{name}},\r\n\r\nWill you be available at {{time}} for an online meeting?";
 
     <?php if ($body): ?>
     document.getElementById('delete').addEventListener('click', (e) => {
