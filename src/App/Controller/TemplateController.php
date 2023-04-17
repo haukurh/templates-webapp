@@ -79,11 +79,13 @@ class TemplateController
         session_start();
         $headers = apache_request_headers();
 
-        if (!isset($_POST['csrf-token']) && !isset($headers['X-csrf-token'])) {
+        if (isset($headers['X-csrf-token'])) {
+            $csrfToken = $headers['X-csrf-token'];
+        } elseif (isset($_POST['csrf-token'])) {
+            $csrfToken = $_POST['csrf-token'];
+        } else {
             throw new Exception('CSRF token missing');
         }
-
-        $csrfToken = $headers['X-csrf-token'] ?: $_POST['csrf-token'];
 
         if ($_SESSION['csrf-token'] !== $csrfToken) {
             throw new Exception('Invalid CSRF token');
