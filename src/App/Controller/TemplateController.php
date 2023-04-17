@@ -18,6 +18,8 @@ class TemplateController
         $csrfToken = $this->csrfToken();
 
         return view('template', [
+            'name' => '',
+            'body' => '',
             'id' => uuid4(),
             'csrfToken' => $csrfToken,
         ]);
