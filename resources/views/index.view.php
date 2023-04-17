@@ -148,7 +148,7 @@
         if (!template) {
             return;
         }
-        const matches = template.body.matchAll(/{{(\S+?\s{0,1}\S+)}}/gm);
+        const matches = template.body.matchAll(/{{(\S+?\s{0,1}\S+?)}}/gm);
         const tmp = [...matches].map((v, i) => {
             return JSON.stringify({
                 key: v[0],
